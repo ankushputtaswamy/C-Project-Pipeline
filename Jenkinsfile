@@ -25,5 +25,26 @@ pipeline {
         '''
       }
     }
+    stage ( 'DEPLOYMENT' )
+    {
+      steps {
+        sh '''
+        echo "Deployment is successfull"
+        '''
+      }
+    }
+    stage ( 'Pipeline Job Status' )
+    {
+      steps {
+        sh '''
+        echo "$?"
+        if [ $? -eq 0 ];then
+        echo "Pipeline job is Successfull"
+        else
+        echo "Pipeline job is Un-Successfull"
+        fi
+        '''
+      }
+    }
   }
 }
