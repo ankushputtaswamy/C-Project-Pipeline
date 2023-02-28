@@ -17,5 +17,13 @@ pipeline {
         '''
       }
     }
+    stage ( 'TESTING' )
+    {
+      steps {
+        sh '''
+        echo "Testing is successfull"
+        '''
+      }
+    }
   }
 }
